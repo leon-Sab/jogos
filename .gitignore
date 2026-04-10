@@ -1,0 +1,44 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore PHPStorm project files
+*.iml
+
+# Ignore operating system files
+ehthumbs.db
+Icon?
+
+# Ignore logs and temporary files
+*.log
+tmp/
+temp/
+
+# Ignore environment files and secrets
+*.env
+.env.local
+.env.*.local
+
+# Ignore Composer vendor directory if used
+vendor/
+
+# Ignore node modules if any frontend tooling is added
+node_modules/
+
+# Ignore XAMPP/Apache temporary files
+*.pid
+
+# Ignore backup files
+*~
+*.swp
+*.swo
+
+# Ignore uploaded files or user-generated content
+uploads/
+
+# Ignore sensitive configuration files
+includes/banco.php
