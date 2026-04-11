@@ -40,7 +40,7 @@
                             $_SESSION['user'] = $reg->nome;
                             $_SESSION['nome'] = $reg->usuario;
                             $_SESSION['tipo'] = $reg->tipo;
-                            echo msgSussesso("Bem Vindo, ". $_SESSION['nome']);
+                            echo msgSussesso("Bem Vindo, ". $_SESSION['user']);
                         }
                     }
                 }
