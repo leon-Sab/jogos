@@ -36,11 +36,9 @@
                 FROM `jogos` j  
                 JOIN generos g ON j.genero = g.cod 
                 JOIN produtoras p ON j.produtora = p.cod ";
-
                 if (!empty($chave)){
                     $q .= "WHERE j.nome LIKE '%$chave%' OR p.produtora LIKE '%$chave%' OR g.genero LIKE '%$chave%'";
                     }
-
                 switch ($ordem){
                     case"P":
                         $q.= "ORDER BY p.produtora";
@@ -54,12 +52,8 @@
                     case"N2":
                         $q.= "ORDER BY j.nota ";
                         break;
-                };
-                
+                    };
                 $busca = $banco->query($q);
-
-                
-                
                     if (!$busca) {
                     echo "<tr><td>Falha na consulta: " . $banco->error . "";
                 } else {
@@ -72,27 +66,21 @@
                             echo "<td><img src='$tumb' class='mini' />";
                             echo "<td><a href='detalhes.php?cod={$reg->cod}'>{$reg->nome}</a>";
                             echo " [{$reg->genero}]<br> Produtora: {$reg->produtora}</td>";
-
-                            if (is_logado() && is_admin()){
+                            if (is_admin()){
                                 echo "<td>
                                 <span class='material-symbols-outlined'>edit</span>
                                 <span class='material-symbols-outlined'>delete</span>
                                 <span class='material-symbols-outlined'>add</span>";
-                                }elseif (is_logado()){
-                                    echo "<span class='material-symbols-outlined'>edit</span>";
-                                }
-
+                                }elseif (is_editor()){
+                                    echo "<td><span class='material-symbols-outlined'>edit</span>";
+                            }
                         }
                     }
                 }
-            
             ?>
         </table>
-
     </div>
-    <?php 
-        include "rodape.php";
-    ?>
+    <?php include "rodape.php";?>
 </body>
 
 </html>

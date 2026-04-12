@@ -5,9 +5,9 @@
     }else{
         echo "Boas vindas <strong>".$_SESSION['user'] . "</strong>";
         echo " | Meus Dados | ";
-        if (is_logado() && is_admin()){
-            echo"Novo jogo | Novo usuario | ";
-        }
+            if (is_admin()){
+                echo"Novo jogo | Novo usuario | ";
+            }
         echo"<a href='user-logout.php'>Sair</a>";
     }
 
