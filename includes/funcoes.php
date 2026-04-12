@@ -33,13 +33,4 @@
                 error</span>$msg
         </div>"; 
     }
-    function editar(){
-
-    }
-    function excluir(){
-
-    }
-    function adicionar(){
-        
-    }
 ?>

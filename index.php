@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="estilo/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
     <?php 
         include "includes/banco.php";
@@ -20,14 +22,14 @@
         <?php include_once "menu.php"?>
         <h1>Escolha seu jogo!</h1>
         <form action="index.php" method="get" id="busca">
-                Ordenar:
-                <a href="index.php?o=N&c=<?php echo $chave;?>">Nome</a> |
-                <a href="index.php?o=P&c=<?php echo $chave;?>">Produtora</a> |
-                <a href="index.php?o=N1&c=<?php echo $chave;?>">Nota alta</a> |
-                <a href="index.php?o=N2&c=<?php echo $chave;?>">Nota baixa</a> |
-                Buscar: <input type="text" name="c" size="10" maxlength="40">
-                <button type="submit">ok</button>    
-            </form>
+            Ordenar:
+            <a href="index.php?o=N&c=<?php echo $chave;?>">Nome</a> |
+            <a href="index.php?o=P&c=<?php echo $chave;?>">Produtora</a> |
+            <a href="index.php?o=N1&c=<?php echo $chave;?>">Nota alta</a> |
+            <a href="index.php?o=N2&c=<?php echo $chave;?>">Nota baixa</a> |
+            Buscar: <input type="text" name="c" size="10" maxlength="40">
+            <button type="submit">ok</button>
+        </form>
         <table class="listagem">
             <?php 
                 $q = "SELECT j.cod, j.nome, g.genero,p.produtora, j.descricao, j.nota, j.capa 
@@ -71,18 +73,26 @@
                             echo "<td><a href='detalhes.php?cod={$reg->cod}'>{$reg->nome}</a>";
                             echo " [{$reg->genero}]<br> Produtora: {$reg->produtora}</td>";
 
-                            echo "<td>[Adm]";
-                            
+                            if (is_logado() && is_admin()){
+                                echo "<td>
+                                <span class='material-symbols-outlined'>edit</span>
+                                <span class='material-symbols-outlined'>delete</span>
+                                <span class='material-symbols-outlined'>add</span>";
+                                }elseif (is_logado()){
+                                    echo "<span class='material-symbols-outlined'>edit</span>";
+                                }
+
                         }
                     }
                 }
-
+            
             ?>
         </table>
-        
+
     </div>
     <?php 
         include "rodape.php";
     ?>
 </body>
+
 </html>

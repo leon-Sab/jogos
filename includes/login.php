@@ -27,3 +27,32 @@
         unset($_SESSION['nome']);
         unset($_SESSION['tipo']);
     }
+    #verificar se tem algum usuario logado
+    function is_logado(){
+        if (empty($_SESSION['user'])){
+            return false;
+        }else {
+            return  true;
+        }
+    }
+    #verificar se o usuario é do tipo admin
+    function is_admin(){
+        if (is_logado()){
+            $tipo = $_SESSION["tipo"];
+            if ($tipo == 'admin'){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+    function is_editor(){
+        if (is_logado()){
+            $tipo = $_SESSION["tipo"];
+            if ($tipo == 'editor'){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
