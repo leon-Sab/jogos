@@ -16,16 +16,14 @@
         return"<div class='erro'>
             <span class='material-symbols-outlined'>
                 Warning</span>$msg
-        </div>    
-        ";
+        </div>";
     }
     function msgSussesso($msg){
         return "
         <div class='sucesso'>
             <span class='material-symbols-outlined'>
                 check_circle</span>$msg
-        </div>    
-        ";
+        </div>";
     }
     function msgAviso($msg){
         return "<div class='aviso'>

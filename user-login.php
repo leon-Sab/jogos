@@ -23,7 +23,6 @@
                 require "user-form.php";
             }
             else{
-                
                 $q = "SELECT usuario, nome, senha, tipo 
                       from usuarios where usuario = '$u'";
                 $busca = $banco->query($q);
