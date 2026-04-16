@@ -27,19 +27,19 @@
                       from usuarios where usuario = '$u'";
                 $busca = $banco->query($q);
                 if (!$busca){
-                    echo msgErro("ocorreu um erro! verifique o nome ou a senha");
+                    echo msgErro("Ocorreu um erro! verifique o nome ou a senha");
                 } else {
                     if ($busca->num_rows == 0) {
                             echo "Usuário não encontrado";
                     } else {
                         $reg = $busca->fetch_object();
                         if(!testarHash($s,$reg->senha)){
-                            echo msgAviso("verifique a senha");
+                            echo msgAviso("Verifique a senha!");
                         }else{
-                            $_SESSION['user'] = $reg->nome;
-                            $_SESSION['nome'] = $reg->usuario;
+                            $_SESSION['user'] = $reg->usuario;
+                            $_SESSION['nome'] = $reg->nome;
                             $_SESSION['tipo'] = $reg->tipo;
-                            echo msgSucesso("Bem Vindo, ". $_SESSION['user']);
+                            echo msgSucesso("Bem Vindo, ". $_SESSION['nome']);
                         }
                     }
                 }

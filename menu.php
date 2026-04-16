@@ -3,7 +3,7 @@
     if(empty($_SESSION['nome'])){
         echo"<a href='user-login.php'>entrar</a>";
     }else{
-        echo "Boas vindas <strong>".$_SESSION['user'] . "</strong>";
+        echo "Boas vindas <strong>".$_SESSION['nome'] . "</strong>";
         echo " | <a href='user-edit.php'>Meus Dados</a> | ";
             if (is_admin()){
                 echo"Novo jogo |
