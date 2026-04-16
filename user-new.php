@@ -18,8 +18,8 @@
     <div id="corpo">
         <?php 
                 if (!is_admin()){
-                    msgAviso("Voçê nao tem acesso a essa pagina!");
-                    voltar();
+                    echo msgAviso("Voçê nao tem acesso a essa pagina!");
+                    echo voltar();
                 }else{
                     if(!isset($_POST['usuario'])){
                         require "user-new-form.php";
@@ -31,14 +31,24 @@
                         $tipo = $_POST['tipo'] ?? null;
                         if ($senha1 === $senha2){
                             if(empty($usuario)||empty($nome)||empty($senha1)||empty($senha2)||empty($tipo)){
-                                msgErro("Todos os campos são obrigatorios!");
+                                echo msgErro("Todos os campos são obrigatorios!");
+                                echo voltar();
                             }else{
-                                $senha = gerarCripto($senha1);
+                                $senha = criarHash($senha1);
                                 $q = "INSERT INTO `usuarios` (`usuario`, `nome`, `senha`, `tipo`) 
                                 VALUES ('$usuario', '$nome', '$senha', '$tipo')";
                                 $registro = $banco->query($q);
-                                echo msgSussesso("teste");
+                                if($registro){
+                                    echo msgSucesso("Usuario cadastrado com sucesso!");
+                                    echo voltar();
+                                }else{
+                                    echo msgErro("Erro ao cadastrar usuario!");
+                                    echo voltar();
+                                }
                             }
+                        } else {
+                            echo msgErro("As senhas não coincidem!");
+                            echo voltar();
                         }
                     }
                 }

@@ -18,7 +18,7 @@
                 Warning</span>$msg
         </div>";
     }
-    function msgSussesso($msg){
+    function msgSucesso($msg){
         return "
         <div class='sucesso'>
             <span class='material-symbols-outlined'>

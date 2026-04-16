@@ -20,7 +20,7 @@
             $u = $_POST['usuario'] ?? null;
             $s = $_POST['senha'] ?? null;
             if(is_null($u) || is_null($s)){
-                require "user-form.php";
+                require "user-login-form.php";
             }
             else{
                 $q = "SELECT usuario, nome, senha, tipo 
@@ -39,7 +39,7 @@
                             $_SESSION['user'] = $reg->nome;
                             $_SESSION['nome'] = $reg->usuario;
                             $_SESSION['tipo'] = $reg->tipo;
-                            echo msgSussesso("Bem Vindo, ". $_SESSION['user']);
+                            echo msgSucesso("Bem Vindo, ". $_SESSION['user']);
                         }
                     }
                 }

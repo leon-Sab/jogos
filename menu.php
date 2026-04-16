@@ -4,7 +4,7 @@
         echo"<a href='user-login.php'>entrar</a>";
     }else{
         echo "Boas vindas <strong>".$_SESSION['user'] . "</strong>";
-        echo " | Meus Dados | ";
+        echo " | <a href='user-edit.php'>Meus Dados</a> | ";
             if (is_admin()){
                 echo"Novo jogo |
                  <a href='user-new.php'>Novo usuario </a>| ";
