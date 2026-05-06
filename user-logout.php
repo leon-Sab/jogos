@@ -18,7 +18,6 @@
     <div id="corpo">
         <?php 
             echo logout();
-            echo msgSucesso("usuario desconectado!!");
             echo voltar();
         ?>
     </div>

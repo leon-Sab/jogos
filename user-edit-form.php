@@ -1,6 +1,7 @@
 <?php 
-include "includes/login.php";
-include "includes/funcoes.php";
+require_once "includes/banco.php";
+require_once "includes/funcoes.php";
+require_once "includes/login.php";
 
 if (!is_logado()){
     echo msgErro("efetue <a href='user-login.php'>login</a> para continuar");
@@ -38,4 +39,3 @@ if (!is_logado()){
             </tr>
     </form>
     </table>
-?>

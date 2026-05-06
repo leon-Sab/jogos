@@ -33,9 +33,11 @@
                     $reg = $busca->fetch_object();
                     echo "<tr><td rowspan='3'><img src='" . thumb($reg->capa) . "' class='max' />";
                     echo "<td><h2>{$reg->nome}</h2>";
-                    echo "nota: {$reg->nota}/10";
+                    echo "nota: {$reg->nota}/10     ";
+                    echo "| codigo: {$reg->cod} |  ";
+                    echo "<a href='detalhes-form.php?cod={$reg->cod}'><span class='material-symbols-outlined'>edit</span><br>";
                     echo "<tr><td>{$reg->descricao}";
-                    echo "<tr><td>[adm]<br>";
+                    
                 }
             }
             ?>

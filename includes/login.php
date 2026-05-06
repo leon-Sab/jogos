@@ -26,6 +26,7 @@
         unset($_SESSION['user']);
         unset($_SESSION['nome']);
         unset($_SESSION['tipo']);
+        return msgSucesso("usuario desconectado!!");
     }
     #verificar se tem algum usuario logado
     function is_logado(){

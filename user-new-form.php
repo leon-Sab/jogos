@@ -1,6 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuario</title>
+    <link rel="stylesheet" href="estilo/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <?php
+        require_once "includes/banco.php";
+        require_once "includes/funcoes.php";
+        require_once "includes/login.php";
+        ?>
+    <div id="corpo">
 <table>
-    <h1>Cadastrar Usuário</h1>
-    <form action="user-new.php" method="POST">
+
+<?php
+    if(!is_logado() || !is_admin()){
+        echo msgErro("você não tem permissão para acessar esta página");
+        echo voltar();
+
+    } else {
+        ?>
+        <tr><th><h1>Cadastrar Usuário</h1>
+        <form action="user-new.php" method="POST">
 
         <tr><td>Usuário
                 <td><input type="text" name="usuario" placeholder="Nome de usuário" required>
@@ -19,4 +44,5 @@
         <tr><td><button type="submit">Cadastrar</button>
 
     </form>
-</table>
+    </table>
+    <?php }?>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php
-    include "includes/banco.php";
-    include "includes/funcoes.php";
-    include "includes/login.php";
+    require_once "includes/banco.php";
+    require_once "includes/funcoes.php";
+    require_once "includes/login.php";
 ?>
 <head>
     <meta charset="UTF-8">
