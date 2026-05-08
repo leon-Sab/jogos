@@ -39,3 +39,4 @@ if (!is_logado()){
             </tr>
     </form>
     </table>
+    <?php echo voltar(); ?>

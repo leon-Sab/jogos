@@ -68,11 +68,12 @@
                             echo " [{$reg->genero}]<br> Produtora: {$reg->produtora}</td>";
                             if (is_admin()){
                                 echo "<td>
-                                <span class='material-symbols-outlined'>edit</span>
+                                <a href='games-form.php?cod={$reg->cod}'><span class='material-symbols-outlined'>edit</span></a>
                                 <span class='material-symbols-outlined'>delete</span>
                                 <span class='material-symbols-outlined'>add</span>";
                                 }elseif (is_editor()){
-                                    echo "<td><span class='material-symbols-outlined'>edit</span>";
+                                 
+                                echo "<td><span class='material-symbols-outlined'>edit</span>";
                             }
                         }
                     }

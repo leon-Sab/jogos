@@ -28,21 +28,20 @@
         <form action="user-new.php" method="POST">
 
         <tr><td>Usuário
-                <td><input type="text" name="usuario" placeholder="Nome de usuário" required>
+                <td><input type="text" name="usuario" placeholder="Nome de usuário" size='10' maxlength='10' required>
         <tr><td>Nome
                 <td><input type="text" name="nome" placeholder="Nome completo" required>
          <tr><td>Senha
-                <td><input type="password" name="senha1" placeholder="Senha" required>
+                <td><input type="password" name="senha1" placeholder="Senha" size='10' maxlength='00' required>
         <tr><td>Confirmar senha
-                <td><input type="password" name="senha2" placeholder="Repita a senha" required>
+                <td><input type="password" name="senha2" placeholder="Repita a senha"size='10' maxlength='10' required>
         <tr><td>Tipo de usuário
                 <td><select name="tipo" required>
-                    <option value="">Selecione</option>
-                    <option value="admin">Administrador</option>
-                    <option value="editor">editor</option>
+                    <option value="admin">Administrador Do Sistema</option>
+                    <option value="editor" selected>Editor Autorizado</option>
                 </select>
         <tr><td><button type="submit">Cadastrar</button>
 
     </form>
     </table>
-    <?php }?>
+    <?php } echo voltar();?>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modelo.php</title>
+    <title>detalhes do jogo</title>
     <link rel="stylesheet" href="estilo/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
@@ -22,7 +22,7 @@
             <?php
 
             $cod = $_GET['cod'] ?? $cod = 0;
-
+            
             $busca = $banco->query("SELECT * FROM jogos WHERE cod=$cod");
             if (!$busca) {
                 echo "falha na busca";
@@ -34,8 +34,7 @@
                     echo "<tr><td rowspan='3'><img src='" . thumb($reg->capa) . "' class='max' />";
                     echo "<td><h2>{$reg->nome}</h2>";
                     echo "nota: {$reg->nota}/10     ";
-                    echo "| codigo: {$reg->cod} |  ";
-                    echo "<a href='detalhes-form.php?cod={$reg->cod}'><span class='material-symbols-outlined'>edit</span><br>";
+                    echo "<a href='games-form.php?cod={$reg->cod}'><span class='material-symbols-outlined'>edit</span><br>";
                     echo "<tr><td>{$reg->descricao}";
                     
                 }
